@@ -45,18 +45,6 @@ public class ChatMessageController {
         return ResponseEntity.status(HttpStatus.CREATED).body(chatMessageService.sendMessage(message));
     }
 
-//    //클리이언트로 부터 오는 이미지파일 수신
-//    @MessageMapping("/upload")
-//    @SendTo("/sub/uploadStatus")
-//    public String handleBinaryMessage(byte[] fileData) {
-//        try {
-//            // 파일 저장 로직
-//            return "File uploaded successfully!";
-//        } catch (Exception e) {
-//            return "File upload failed: " + e.getMessage();
-//        }
-//    }
-
     //채팅메세지 조회
     @GetMapping
     @ResponseBody
