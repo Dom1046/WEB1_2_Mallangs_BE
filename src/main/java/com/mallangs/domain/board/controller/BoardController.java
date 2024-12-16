@@ -44,7 +44,7 @@ public class BoardController {
     }
 
     @Operation(summary = "커뮤니티 게시글 전체 조회", description = "커뮤니티 게시글을 모두 조회합니다.")
-    @GetMapping("/community/")
+    @GetMapping("/community")
     public ResponseEntity<PageResponse<CommunityListResponse>> getAllCommunity(@RequestParam(defaultValue = "1") int page) {
         PageRequest pageRequest = PageRequest.of(page - 1, 10);
         return ResponseEntity.ok(PageResponse.from(boardService.getAllCommunityBoard(pageRequest)));
